@@ -27,19 +27,19 @@ Mode **speaking** : Animation bouche pendant les réponses et la phrase d'accuei
 
 ### Structure du code
 
-├── Main.py                     # Point d'entrée et orchestration principale
-├── audio/
-│   ├── AudioProcessing.py      # Acquisition, reconnaissance et synthèse vocale
-│   ├── Speak.py               # Lecture de fichiers audio
-│   └── preRecordedDialogs/    # Fichiers .wav pré-enregistrés pour les réponses courantes
-├── screen/
-│   └── Screen.py              # Gestion des expressions faciales
-├── servo/
-│   ├── Servo.py               # Contrôle des servomoteurs
-│   └── servo_preinit.sh       # Script d'initialisation pour éviter que les servomoteurs ne 
-|                                   tournent au démarrage
-└── lib/                       # Modèles et bibliothèques externes (à compléter avec les librairies
-                                    vosk-model-small-fr-0.22 et piper)
+├── Main.py                     # Point d'entrée et orchestration principale<br>
+├── audio/<br>
+│   ├── AudioProcessing.py      # Acquisition, reconnaissance et synthèse vocale<br>
+│   ├── Speak.py               # Lecture de fichiers audio<br>
+│   └── preRecordedDialogs/    # Fichiers .wav pré-enregistrés pour les réponses courantes<br>
+├── screen/<br>
+│   └── Screen.py              # Gestion des expressions faciales<br>
+├── servo/<br>
+│   ├── Servo.py               # Contrôle des servomoteurs<br>
+│   └── servo_preinit.sh       # Script d'initialisation pour éviter que les servomoteurs ne <br>
+|                                   tournent au démarrage<br>
+└── lib/                       # Modèles et bibliothèques externes (à compléter avec les <br>
+                                    librairies vosk-model-small-fr-0.22 et piper)<br>
 ### Technologies Utilisées
 - **Raspberry Pi 4** avec GPIO pour l'interface matérielle
 Vosk pour la reconnaissance vocale (français)

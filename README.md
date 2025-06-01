@@ -45,7 +45,11 @@ grp10/                                      # Dossier utilisateur
         ├── servo/
         │   ├── Servo.py                    # Contrôle des servomoteurs
         │   └── servo_preinit.sh            # Script d'initialisation pour éviter que les servomoteurs ne tournent au démarrage
-        └── lib/                            # Modèles et bibliothèques externes (à compléter avec piper et vosk)
+        ├── lib/                            # Modèles et bibliothèques externes (à compléter) 
+        │   ├── piper                       # librairie tts (fichier binaire à télécharger)
+        │   ├── vosk-model-small-fr-0.22    # Modèle pour la reconnaissance vocale
+        │   ├── fr_FR-siwis-medium.onnx     # Modèle de voix du robot
+        │   └── fr_FR-siwis-medium.onnx.json
 ```
 
 ### Composants électroniques 
@@ -60,51 +64,54 @@ grp10/                                      # Dossier utilisateur
 
 ### Configuration 
 - installation de l'OS
-- Activer I2C pour l'écran et le module de contrôle des servomoteurs: 
+- Activer l'I2C pour l'écran et le module de contrôle des servomoteurs: 
 ```bash
 sudo raspi-config
 > "Interfacing Options" 
 > "I2C"
 > Enable 
 ```
+Pour vérifier les adresses I2C:
+```bash
+i2cdetect -y 1
+```
 
 - Audio:
     sudo raspi-config > systeme option > audio > choose USB
 
-### Librairies et model
-- audio
+### Librairies et modèles
+
+- Audio
     - **sounddevice** (python): lire et enregistrer des tableaux NumPy contenant des signaux audio
     Pour l'installer, il faut au préalable installer **portAudio** via la commande suivante:
     ```bash
     sudo apt install portaudio19-dev libasound2-dev 
     ```
+
     - **wikipedia** (python): rechercher des pages wikipedia et récupérer des résumés
+
     - **vosk** (python): pour la reconnaissance vocale
+    Pour que la librairie fonctionne, il faut également télécharger un modèle de language via https://alphacephei.com/vosk/models.  
+    Pour le projet nous avons choisi le model vosk-model-small-fr-0.22, déposé dans le dossier **lib/**.
+
+    - **piper** (fichier binaire): librairie tts pour l'enregistrement des réponses du robot.
+
+    Pour l'installer, télécharger a version 64-bits du fichier binaire via ce lien: https://github.com/rhasspy/piper, et placer ce dossier dans le répertoire **lib/**.
+
+    Ensuite, télécharger le modèle de voix du robot via ce lien: https://github.com/rhasspy/piper/blob/master/VOICES.md. La version choisie pour le projet est **fr_FR-siwis-medium.onnx**.
     
 
-Vosk pour la reconnaissance vocale (français)
-Piper pour la synthèse vocale
-Wikipedia API pour la recherche d'informations
-Pygame pour l'interface graphique
-Threading pour la gestion parallèle des tâches
-Installation
-Prérequis Système
-Raspberry Pi avec Raspbian/Raspberry Pi OS
-Python 3.7+
-Connexion internet pour Wikipedia
-Microphone USB sur port 1
-Écran pour l'affichage facial
-Servomoteurs connectés via ServoKit (canaux 0, 1, 2)
-Bouton poussoir sur GPIO 4
-Dépendances Python
-bash
-pip install RPi.GPIO sounddevice numpy queue wave pygame wikipedia vosk adafruit-servokit
-Modèles Requis
-Placez dans le dossier lib/ :
+- Ecran
+    - **pygame** (python): dessiner et afficher les expressions du visage du robot
+    - **math** (python): utiliser des fonctions courantes pour le dessin des traits
 
-vosk-model-small-fr-0.22 : Modèle de reconnaissance vocale française
-fr_FR-siwis-medium.onnx : Modèle de synthèse vocale française
-piper/ : Exécutable Piper pour la synthèse vocale
+- Servomoteurs
+    - **adafruit-circuitpython-servokit** (python): commander les servomoteurs
+
+- Autres
+    - **RPI.GPIO** (python): gérer les GPIO de la raspberry
+
+
 Configuration Matérielle
 GPIO 4 : Bouton poussoir (pull-up interne)
 GPIO 17 : Pin OE pour contrôle des servomoteurs

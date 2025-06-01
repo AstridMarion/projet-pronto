@@ -26,27 +26,27 @@ Mode **speaking** : Animation bouche pendant les réponses et la phrase d'accuei
 ## Architecture Technique
 
 ### Structure de l'environnement
-
+```bash
 grp10/<br>                                  # Dossier utilisateur<br>
 ├── setup_autostart.sh                      # Fichier de démarrage automatique après allumage<br>
 ├── ...<br>
 └── p10/                                    # Environnement virtuel Python<br>
->   ├── bin/<br>
->   ├── lib/<br>
->   ├── ...<br>
->   └── projet-pronto/                      # Dossier mère du projet<br>
->>      ├── Main.py                         # Point d'entrée et orchestration principale<br>
->>      ├── audio/<br>
->>      │   ├── AudioProcessing.py          # Acquisition, reconnaissance et synthèse vocale<br>
->>      │   ├── Speak.py                    # Lecture de fichiers audio<br>
->>      │   └── preRecordedDialogs/         # Fichiers .wav pré-enregistrés pour les réponses courantes<br>
->>      ├── screen/<br>
->>      │   └── Screen.py                   # Gestion des expressions faciales<br>
->>      ├── servo/<br>
->>      │   ├── Servo.py                    # Contrôle des servomoteurs<br>
->>      │   └── servo_preinit.sh            # Script d'initialisation pour éviter que les servomoteurs ne tournent au démarrage<br>
->>      └── lib/                            # Modèles et bibliothèques externes (à compléter avec piper et vosk)<br>
-
+    ├── bin/<br>
+    ├── lib/<br>
+    ├── ...<br>
+    └── projet-pronto/                      # Dossier mère du projet<br>
+        ├── Main.py                         # Point d'entrée et orchestration principale<br>
+        ├── audio/<br>
+        │   ├── AudioProcessing.py          # Acquisition, reconnaissance et synthèse vocale<br>
+        │   ├── Speak.py                    # Lecture de fichiers audio<br>
+        │   └── preRecordedDialogs/         # Fichiers .wav pré-enregistrés pour les réponses courantes<br>
+        ├── screen/<br>
+        │   └── Screen.py                   # Gestion des expressions faciales<br>
+        ├── servo/<br>
+        │   ├── Servo.py                    # Contrôle des servomoteurs<br>
+        │   └── servo_preinit.sh            # Script d'initialisation pour éviter que les servomoteurs ne tournent au démarrage<br>
+        └── lib/                            # Modèles et bibliothèques externes (à compléter avec piper et vosk)<br>
+```
 
 ### Composants électroniques 
 - **Raspberry Pi 4 model b** avec GPIO pour l'interface matérielle

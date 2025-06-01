@@ -25,23 +25,46 @@ Mode **speaking** : Animation bouche pendant les réponses et la phrase d'accuei
 
 ## Architecture Technique
 
-### Structure du code
+### Structure de l'environnement
 
-├── Main.py                     # Point d'entrée et orchestration principale<br>
-├── audio/<br>
-│   ├── AudioProcessing.py      # Acquisition, reconnaissance et synthèse vocale<br>
-│   ├── Speak.py               # Lecture de fichiers audio<br>
-│   └── preRecordedDialogs/    # Fichiers .wav pré-enregistrés pour les réponses courantes<br>
-├── screen/<br>
-│   └── Screen.py              # Gestion des expressions faciales<br>
-├── servo/<br>
-│   ├── Servo.py               # Contrôle des servomoteurs<br>
-│   └── servo_preinit.sh       # Script d'initialisation pour éviter que les servomoteurs ne <br>
-|                                   tournent au démarrage<br>
-└── lib/                       # Modèles et bibliothèques externes (à compléter avec les <br>
-                                    librairies vosk-model-small-fr-0.22 et piper)<br>
-### Technologies Utilisées
-- **Raspberry Pi 4** avec GPIO pour l'interface matérielle
+grp10/<br>                                  # Dossier utilisateur<br>
+├── setup_autostart.sh                      # Fichier de démarrage automatique après allumage<br>
+├── ...<br>
+└── p10/                                    # Environnement virtuel Python<br>
+    ├── bin/<br>
+    ├── lib/<br>
+    ├── ...<br>
+    └── projet-pronto/                      # Dossier mère du projet<br>
+        ├── Main.py                         # Point d'entrée et orchestration principale<br>
+        ├── audio/<br>
+        │   ├── AudioProcessing.py          # Acquisition, reconnaissance et synthèse vocale<br>
+        │   ├── Speak.py                    # Lecture de fichiers audio<br>
+        │   └── preRecordedDialogs/         # Fichiers .wav pré-enregistrés pour les réponses courantes<br>
+        ├── screen/<br>
+        │   └── Screen.py                   # Gestion des expressions faciales<br>
+        ├── servo/<br>
+        │   ├── Servo.py                    # Contrôle des servomoteurs<br>
+        │   └── servo_preinit.sh            # Script d'initialisation pour éviter que les servomoteurs ne tournent au démarrage<br>
+        └── lib/                            # Modèles et bibliothèques externes (à compléter avec piper et vosk)<br>
+
+
+### Composants électroniques 
+- **Raspberry Pi 4 model b** avec GPIO pour l'interface matérielle
+- **Casque USB**
+- **bouton poussoir**
+- **résistance** (1 kΩ) 
+- **Module de commande ADA815**
+- **3 servomoteurs continues**
+- **Ecran** LCD UCTRONICS B0106
+- **Câbles**: alimentation raspberry avec boîtier (3A, 5.1V) / hub USB (2 ports) / câbles Dupont (x8) / HDMI-HDMI mini (pour l'écran) / USB-micro_USB (alim écran) / alim module servo / adaptateur USB-secteur 
+
+### Librairies et model
+- audio
+    - sounddevice : lire et enregistrer des tableaux NumPy contenant des signaux audio
+    Pour l'installer, il faut au préalable installer portAudio via la commande suivante:
+    ```bash
+    ```sudo apt install portaudio19-dev libasound2-dev
+
 Vosk pour la reconnaissance vocale (français)
 Piper pour la synthèse vocale
 Wikipedia API pour la recherche d'informations

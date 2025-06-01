@@ -58,12 +58,29 @@ grp10/<br>                                  # Dossier utilisateur<br>
 - **Ecran** LCD UCTRONICS B0106
 - **Câbles**: alimentation raspberry avec boîtier (3A, 5.1V) / hub USB (2 ports) / câbles Dupont (x8) / HDMI-HDMI mini (pour l'écran) / USB-micro_USB (alim écran) / alim module servo / adaptateur USB-secteur 
 
+### Configuration 
+- installation de l'OS
+- Activer I2C pour l'écran et le module de contrôle des servomoteurs: 
+```bash
+sudo raspi-config
+> "Interfacing Options" 
+> "I2C"
+> Enable 
+```
+
+- Audio:
+    sudo raspi-config > systeme option > audio > choose USB
+
 ### Librairies et model
 - audio
-    - sounddevice : lire et enregistrer des tableaux NumPy contenant des signaux audio
-    Pour l'installer, il faut au préalable installer portAudio via la commande suivante:
+    - **sounddevice** (python): lire et enregistrer des tableaux NumPy contenant des signaux audio
+    Pour l'installer, il faut au préalable installer **portAudio** via la commande suivante:
     ```bash
-    sudo apt install portaudio19-dev libasound2-dev
+    sudo apt install portaudio19-dev libasound2-dev 
+    ```
+    - **wikipedia** (python): rechercher des pages wikipedia et récupérer des résumés
+    - **vosk** (python): pour la reconnaissance vocale
+    
 
 Vosk pour la reconnaissance vocale (français)
 Piper pour la synthèse vocale

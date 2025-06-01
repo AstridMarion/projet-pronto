@@ -63,7 +63,7 @@ grp10/<br>                                  # Dossier utilisateur<br>
     - sounddevice : lire et enregistrer des tableaux NumPy contenant des signaux audio
     Pour l'installer, il faut au préalable installer portAudio via la commande suivante:
     ```bash
-    ```sudo apt install portaudio19-dev libasound2-dev
+    sudo apt install portaudio19-dev libasound2-dev
 
 Vosk pour la reconnaissance vocale (français)
 Piper pour la synthèse vocale

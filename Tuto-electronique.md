@@ -25,10 +25,8 @@ Il a pour objectif d'apporter toutes les clés, étape par étape, de la réalis
     - **Canal 1** : Tête
     - **Canal 2** : Bras droit
 
-```html
 <img src="images/[Branchement]Casque.png" alt="Description" width="300" height="200">
 
-```
 
 ## 3. Configuration Raspberry
 

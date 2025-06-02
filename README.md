@@ -28,9 +28,9 @@ WIKIBOT est un robot interactif capable de répondre à une requête vocale en u
 
 ## Auteurs
 
-Ce projet a été développé par 4 étudiants:<br>
+Nous sommes une équipe de 4 étudiants de l'IMT Atlantique composée de:<br>
 <br>
 Louis BONDUELLE<br>
 Coline FELTIN<br>
 Florian THOLLOT<br>
-Astrid MARION<br>
+et Astrid MARION<br>

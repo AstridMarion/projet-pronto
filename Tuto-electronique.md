@@ -27,9 +27,9 @@ Il a pour objectif d'apporter toutes les clés, étape par étape, de la réalis
 
 Ci-desous sont illustrés les branchements réalisés:<br>
 <img src="./images/Branchement_Servomoteurs.png" width="400" >
-<img src="./images/Branchement_Bonton-poussoir.png" width="390" >
+<img src="./images/Branchement_Bonton-poussoir.png" width="380" >
 <img src="./images/Branchement_Casque.png" width="400" >
-<img src="./images/Branchement_Ecran.png" width="380" >
+<img src="./images/Branchement_Ecran.png" width="370" >
 
 ## 3. Configuration Raspberry
 

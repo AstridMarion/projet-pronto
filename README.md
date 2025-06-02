@@ -14,7 +14,10 @@ Ce robot compagnon est conçu pour interagir naturellement avec les utilisateurs
 - Mode **thinking** : Sourire avec engrenages, sans mouvement lorsque le robot chreche la réponse
 - Mode **teaching** : Lunettes avec une animation de la bouche pour donner les réponses lorsqu'elles sont trouvées
 - Mode **speaking** : Animation de la bouche lorsque le robot n'a pas trouvé la réponse et lors de la phrase d'accueil
-<img src="./images/Expressions.png" width="600" >
+
+<div align="center">
+<img src="./images/Expressions.png" >
+</div>
 
 * **Mouvements** : Gesticule avec les bras et la tête pendant les interactions
 

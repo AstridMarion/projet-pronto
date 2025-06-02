@@ -18,12 +18,14 @@ WIKIBOT est un robot interactif capable de répondre à une requête vocale en u
 
 > Implémentation du code avec choix des librairies<br>
 
+Tout cela en un temps limité de **5 mois**, de janvier 2025 à mi mai 2025.
+
 ## Points abordés
 * Gestion de projet : répartition des tâches, diagramme de Gantt et planification
 * Conception de A à Z d'un robot modulaire à l'impression 3D intègrant les nombreux composants électroniques
 * Traitement d'un signal audio: reconnaissance vocale, recherche d'une réponse sur le web, synthèse vocale
 * Pilotage de servoomoteurs pour bouger Les bras et la tête 
-* Invention de l'intégralité des étapes de l'interaction, en prenant en compte tous les cas de figure possible dont les potentiels disfonctionnement des librairies
+* Invention de l'intégralité des étapes de l'interaction, en prenant en compte tous les cas de figure possible dont les potentiels disfonctionnement des librairies utilisées
 * Communication des avancés au sein de l'équipe et avec nos encadrants
 
 ## Auteurs

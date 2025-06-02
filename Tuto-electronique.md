@@ -7,10 +7,10 @@ Il a pour objectif d'apporter toutes les clés, étape par étape, de la réalis
 ## 1. Composants électroniques utilisés
 
 - **Raspberry Pi 4 model b** avec GPIO pour l'interface matérielle
-- **Casque USB** (/!\ la prise jack de la raspberry ne fournie pas d'entrée audio, donc il est nécessaire )
+- **Casque USB** (/!\ la prise jack de la raspberry ne fournie pas d'entrée audio, donc il est nécessaire d'utiliser un port USB )
 - **bouton poussoir**
 - **résistance** (1 kΩ) 
-- **Module de commande ADA815**
+- **Module de commande ADA815** nécessaire pour contrôler 3 servomoteurs car la raspberry n'en supporte pas autant
 - **3 servomoteurs continues**
 - **Ecran** LCD UCTRONICS B0106
 - **Câbles**: alimentation raspberry avec boîtier (3A, 5.1V) / hub USB (2 ports) / câbles Dupont (x8) / HDMI-HDMI mini (pour l'écran) / USB-micro_USB (alim écran) / alim module servo / adaptateur USB-secteur 
@@ -25,7 +25,7 @@ Il a pour objectif d'apporter toutes les clés, étape par étape, de la réalis
     - **Canal 1** : Tête
     - **Canal 2** : Bras droit
 
-Ci-desous sont illustrés les branchements réalisés:<br>
+Ci-desous sont illustrés les branchements réalisés:<br><br>
 <img src="./images/Branchement_Servomoteurs.png" width="400" >
 <img src="./images/Branchement_Bonton-poussoir.png" width="365" >
 <img src="./images/Branchement_Casque.png" width="400" >
@@ -126,7 +126,7 @@ grp10/                                      # Dossier utilisateur
 
 ## 6. Démarrage automatique
 
-Pour que le fichier Main.py s'exécute automatiquement à l'allumage du robot, le fichier bash setup_autostart.sh est nécessaire. De plus, pour éviter que les servomoteurs ne tournent pendant le démarrage du robot, le fichier **setup_autostart.sh** créer le fichier **/home/grp10/p10/projet-pronto/servo/servo_preinit.sh** pour éviter ce disfonctionnement.
+Pour que le fichier Main.py s'exécute automatiquement à l'allumage du robot, le fichier bash setup_autostart.sh est nécessaire. De plus, pour éviter que les servomoteurs ne tournent pendant le démarrage du robot, le fichier **setup_autostart.sh** créer automatiquement le fichier **/home/grp10/p10/projet-pronto/servo/servo_preinit.sh** pour éviter ce disfonctionnement.
 
 1. Déplacer le fichier setup_autostart.sh vers le chemin **/home/grp10/setup_autostart.sh**
 2. Rendre le fichier exécutable:

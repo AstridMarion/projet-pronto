@@ -11,24 +11,18 @@ Wikibot est un robot interactif capable de répondre aux questions vocales en ut
 ## 1. Description
 Ce robot compagnon est conçu pour interagir naturellement avec les utilisateurs à travers :
 
-**Reconnaissance vocale** : Écoute et comprend les requêtes (un seul mot ou groupe de mots) en français quand l'utilisateur maintient le bouton poussoir 
-**Recherche sur wikipedia** : Utilise Wikipedia pour fournir un résumé en une phrase de la page correspondante à la requête de l'utilisateur.
-**Synthèse vocale** : Répond avec une voix de synthèse
-**Expressions faciales** : Affiche différentes expressions sur écran selon le contexte (speaking, teaching, waiting, thinking)
-**Mouvements** : Gesticule avec les bras et la tête pendant les interactions
+* **Reconnaissance vocale** : Écoute et comprend les requêtes (un seul mot ou groupe de mots) en français quand l'utilisateur maintient le bouton poussoir 
+* **Recherche sur wikipedia** : Utilise Wikipedia pour fournir un résumé en une phrase de la page correspondante à la requête de l'utilisateur.
+* **Synthèse vocale** : Répond avec une voix de synthèse
+* **Expressions faciales** : Affiche différentes expressions sur écran selon le contexte:<br>
+- Mode **waiting** : Visage souriant, sans mouvement lorsque le robot attend la requête de l'utilisateur
+- Mode **thinking** : Sourire avec engrenages, sans mouvement lorsque le robot chreche la réponse
+- Mode **teaching** : Lunettes avec une animation de la bouche pour donner les réponses lorsqu'elles sont trouvées
+- Mode **speaking** : Animation de la bouche lorsque le robot n'a pas trouvé la réponse et lors de la phrase d'accueil
+<img src="./images/Expressions.png" width="500" >
 
-## 2. Fonctionnalités
+* **Mouvements** : Gesticule avec les bras et la tête pendant les interactions
 
-### Interface Multimodale
-**Audio** : Enregistrement lorsque le bouton poussoir est maintenu avec sounddevice, reconnaissance vocale avec Vosk, recherche sur le web avec wikipedia, synthèse vocale avec Piper pour générer la réponse.
-**Visuel** : Écran avec expressions faciales animées (parlant, enseignant, attente, réflexion)
-**Gestuelle** : Servomoteurs pour les 2 bras et la tête avec mouvements synchronisés.
-
-### Modes d'Expression du visage
-Mode **waiting** : Visage souriant, sans mouvement
-Mode **thinking** : Sourire avec engrenages, sans mouvement
-Mode **teaching** : Lunettes et animation bouche pour les réponses
-Mode **speaking** : Animation bouche pendant les réponses et la phrase d'accueil.
 
 ### Etapes de l'interaction
 

@@ -20,22 +20,17 @@ WIKIBOT est un robot interactif capable de répondre à une requête vocale en u
 
 > Implémentation du code avec choix des librairies<br>
 
-Réaliser Ce robot compagnon est conçu pour interagir naturellement avec les utilisateurs à travers :
-
-* **Reconnaissance vocale** : Écoute et comprend les requêtes (un seul mot ou groupe de mots) en français quand l'utilisateur maintient le bouton poussoir 
-
-* **Recherche sur wikipedia** : Utilise Wikipedia pour fournir un résumé en une phrase de la page correspondante à la requête de l'utilisateur.
-
-* **Synthèse vocale** : Répond avec une voix de synthèse
-
-
-* **Mouvements** : Gesticule avec les bras et la tête pendant les interactions
+## Points abordés
+* Gestion de projet : répartition des tâches, diagramme de Gantt et planification
+* Conception de A à Z d'un robot modulaire à l'impression 3D intègrant les nombreux composants électroniques
+* Traitement d'un signal audio: reconnaissance vocale, recherche d'une réponse sur le web, synthèse vocale
+* Pilotage de servoomoteurs pour bouger Les bras et la tête 
 
 ## Auteurs
 
-Ce projet a été développé par 4 étudiants de l'IMT Atlantique dans le cadre du projet Pronto:
-
-Astrid MARION
-Louis BONDUELLE
-Coline FELTIN
-Florian THOLLOT
+Ce projet a été développé par 4 étudiants:<br>
+<br>
+Louis BONDUELLE<br>
+Coline FELTIN<br>
+Florian THOLLOT<br>
+Astrid MARION<br>

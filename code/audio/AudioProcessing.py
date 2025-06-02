@@ -79,6 +79,9 @@ class AudioProcessing(threading.Thread):
     def stop(self):
         """Stop generating answer """
         self._running = False
+    
+    def getUserSpeak(self):
+        return self.userSpeak
 
 #############################################################################################################################
 #################################################### Speech to text #########################################################
@@ -165,7 +168,6 @@ class AudioProcessing(threading.Thread):
                     recognizer.AcceptWaveform(data)
 
             result = json.loads(recognizer.FinalResult())
-            print(result.get("text", ""))
             return result.get("text", "")
 
         except Exception as e:
@@ -222,23 +224,5 @@ class AudioProcessing(threading.Thread):
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE)
 
-#############################################################################################################################
-#################################################### Play answer #########################################################
-#############################################################################################################################
-    def getAnswerPath(self):
-        return self.OUTPUT_PATH
-    
-    def getUserSpeak(self):
-        return self.userSpeak
 
-
-    def play(self, audio_path):
-
-        # Play the audio file
-        pygame.mixer.init()
-        pygame.mixer.music.load(audio_path) 
-        pygame.mixer.music.play()
-        # Wait for the audio to finish playing
-        while pygame.mixer.music.get_busy():
-            time.sleep(0.1)
 

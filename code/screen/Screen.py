@@ -198,7 +198,6 @@ class Screen(threading.Thread):
         """
         with self._lock:
             self._running = False
-            print("Screen thread stopping flag set")
     
     def change_mode(self, new_mode):
         """

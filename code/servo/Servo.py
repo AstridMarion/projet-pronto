@@ -42,15 +42,12 @@ class Servo(threading.Thread):
         """Main method executed in the thread."""
 
         self._running = True
-        print("Start servo")
         
         try:
             self.move()
         
         except Exception as e:
             print(f"Error in servo thread: {e}")
-        finally:
-            print("stop servo" + self.servoName)
     
     def stop(self):
         """Stop servo thread """

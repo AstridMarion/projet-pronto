@@ -52,7 +52,6 @@ class Main:
             while self.running:
                 # Check that the response has finished being generated
                 if not audioHello.is_alive():
-                    print("Response generated, audio thread automatically stopped")
                     audioHello.stop()
                     servoR.stop()
                     servoL.stop()
@@ -90,7 +89,6 @@ class Main:
 
                     # Check that the response has finished being generated
                     if not audio.is_alive():
-                        print("Response generated, audio thread stopped")
                         audio.stop()
                         self.running = False  # Exit loop
 
@@ -102,7 +100,6 @@ class Main:
                 # Start robot response
                 print("getAnswer=", audio.getAnswer())
                 if audio.getAnswer() == None: # if wikipedia didn't find a response
-                    print("la réponse est soit vide soit None")
                     # Change to teaching mode for responding
                     self.screen.change_mode("speaking")
                     # play dontKnow.wav file and turn head
@@ -116,7 +113,6 @@ class Main:
                     while self.running:
                         # Check that the response has finished being saying
                         if not audioDontKnow.is_alive():
-                            print("Robot finishes speaking")
                             servoH.stop()
                             audioDontKnow.stop()
                             self.running = False  # Exit loop
@@ -135,7 +131,6 @@ class Main:
                     while self.running:
                         # Checks that the robot has finished responding
                         if not speak.is_alive():
-                            print("Robot finishes speaking: speaking thread automatically stopped")
                             speak.stop()
                             self.running = False  # Exit loop
                         time.sleep(0.1)  # Short pause to save CPU power

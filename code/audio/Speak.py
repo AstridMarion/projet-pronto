@@ -2,19 +2,9 @@
 ###################################################################### IMPORTS ######################################################################
 #####################################################################################################################################################
 
-import RPi.GPIO as GPIO
-import sounddevice as sd
-import numpy as np
-import queue
-import wave
-import os
-import json
-import wikipedia
 import pygame
 import time
-import subprocess
 import threading
-from vosk import Model, KaldiRecognizer
 
 class Speak(threading.Thread):
     """
@@ -65,7 +55,7 @@ class Speak(threading.Thread):
                 * self : Reference to the current object.
                 * audioPath : the path of .wav file
             Out:
-                * A summary of the wikipedia page
+                * audio signal
         """
 
         # Play the audio file

@@ -1,7 +1,7 @@
 # Robot Compagnon
 Ce robot est un robot interactif capable de répondre aux questions vocales en utilisant Wikipedia, avec expressions faciales et mouvements corporels.
 
-## Description
+## 1. Description
 Ce robot compagnon est conçu pour interagir naturellement avec les utilisateurs à travers :
 
 **Reconnaissance vocale** : Écoute et comprend les requêtes (un seul mot ou groupe de mots) en français quand l'utilisateur maintient le bouton poussoir 
@@ -10,20 +10,59 @@ Ce robot compagnon est conçu pour interagir naturellement avec les utilisateurs
 **Expressions faciales** : Affiche différentes expressions sur écran selon le contexte (speaking, teaching, waiting, thinking)
 **Mouvements** : Gesticule avec les bras et la tête pendant les interactions
 
-## Fonctionnalités
+## 2. Fonctionnalités
 
 ### Interface Multimodale
 **Audio** : Enregistrement lorsque le bouton poussoir est maintenu avec sounddevice, reconnaissance vocale avec Vosk, recherche sur le web avec wikipedia, synthèse vocale avec Piper pour générer la réponse.
 **Visuel** : Écran avec expressions faciales animées (parlant, enseignant, attente, réflexion)
 **Gestuelle** : Servomoteurs pour les 2 bras et la tête avec mouvements synchronisés.
 
-### Modes d'Expression
+### Modes d'Expression du visage
 Mode **waiting** : Visage souriant, sans mouvement
 Mode **thinking** : Sourire avec engrenages, sans mouvement
 Mode **teaching** : Lunettes et animation bouche pour les réponses
 Mode **speaking** : Animation bouche pendant les réponses et la phrase d'accueil.
 
-## Architecture Technique
+### Etapes de l'interaction
+
+| Etape      | Audio                                                           | servomoteurs | expression visage |
+|------------|-----------------------------------------------------------------|-----------|
+| Démarrage  | Salutation et présentation                                      | Valeurs   |
+| Requête    | L'utilisateur maintient le bouton<br> poussoir et expose sa requête | Info      |
+| Traitement | stt -> Résumé wikipedia -> stt                                  | Info      |
+| Réponse    | 1.       | Info      |
+
+1. Démarrage : Le robot salut en levant les bras puis se présente et explique son fonctionnement 
+2. Question : L'utilisateur maintient le bouton poussoir et expose sa requête
+3. Traitement : Le robot réfléchit et recherche la réponse
+4. Réponse : Le robot répond avec gestes et expressions appropriées
+Flux d'Interaction
+Présentation → Écoute → Traitement → Réponse → Écoute...
+
+Changements de mode d'expression selon l'état du système
+Arrêt automatique des threads à la fin de chaque tâche
+Gestion des ressources partagées avec des verrous
+Développement
+Extension des Fonctionnalités
+Nouvelles expressions : Ajoutez des modes dans Screen.py
+Autres sources de données : Modifiez AudioProcessing.py
+Nouveaux gestes : Étendez Servo.py avec de nouveaux mouvements
+Langues supplémentaires : Changez les modèles Vosk et Piper
+Debugging
+Logs détaillés dans chaque classe
+Gestion d'exceptions dans tous les threads
+Mode verbose pour le développement
+Configuration
+Personnalisation Audio
+Langue : Modifiez wikipedia.set_lang() dans AudioProcessing.py
+Modèles : Changez les chemins dans les variables de configuration
+Qualité audio : Ajustez SAMPLE_RATE et les paramètres d'enregistrement
+Personnalisation Visuelle
+Taille d'écran : Le système s'adapte automatiquement (fullscreen)
+Couleurs et formes : Modifiez les constantes dans Screen.py
+Animations : Ajustez les paramètres d'animation
+
+## 3. Architecture Technique
 ### Composants électroniques 
 
 - **Raspberry Pi 4 model b** avec GPIO pour l'interface matérielle
@@ -148,44 +187,15 @@ chmod +x setup_autostart.sh
 sudo bash setup_autostart.sh
 ```
 
-# Interaction
-Démarrage : Le robot se présente et explique son fonctionnement
-Question : Maintenez le bouton poussoir et posez votre question
-Traitement : Le robot réfléchit et recherche la réponse
-Réponse : Le robot répond avec gestes et expressions appropriées
-Flux d'Interaction
-Présentation → Écoute → Traitement → Réponse → Écoute...
-
-Changements de mode d'expression selon l'état du système
-Arrêt automatique des threads à la fin de chaque tâche
-Gestion des ressources partagées avec des verrous
-Développement
-Extension des Fonctionnalités
-Nouvelles expressions : Ajoutez des modes dans Screen.py
-Autres sources de données : Modifiez AudioProcessing.py
-Nouveaux gestes : Étendez Servo.py avec de nouveaux mouvements
-Langues supplémentaires : Changez les modèles Vosk et Piper
-Debugging
-Logs détaillés dans chaque classe
-Gestion d'exceptions dans tous les threads
-Mode verbose pour le développement
-Configuration
-Personnalisation Audio
-Langue : Modifiez wikipedia.set_lang() dans AudioProcessing.py
-Modèles : Changez les chemins dans les variables de configuration
-Qualité audio : Ajustez SAMPLE_RATE et les paramètres d'enregistrement
-Personnalisation Visuelle
-Taille d'écran : Le système s'adapte automatiquement (fullscreen)
-Couleurs et formes : Modifiez les constantes dans Screen.py
-Animations : Ajustez les paramètres d'animation
-
-# Points d'amélioration possibles
+## 4. Points d'amélioration possibles
 - Changer le casque audio pour de vrais micro et haut-parleur.
 - Faire en sorte que wikipedia ne renvoie pas de phonétique dans le résumé de la page, car piper ne parvient pas à le lire avec son modèle de voix.
+- Ajouter un régulateur de tension pour éviter d'avoir 2 alimentations à brancher.
 - Redimmensionner les pièces 3D, car certaines pièces ne laissent pas assez de marge, ce qui nous a contraint à limer une partie des pièces.
 
-# Auteurs
-Développé par 4 étudiants dans le cadre du projet Pronto à IMT Atlantique:
+## 5. Auteurs
+Ce projet a été développé par 4 étudiants de l'IMT Atlantique dans le cadre du projet Pronto:
+
 Astrid MARION
 Louis BONDUELLE
 Coline FELTIN

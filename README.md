@@ -24,14 +24,15 @@ Mode **teaching** : Lunettes et animation bouche pour les réponses
 Mode **speaking** : Animation bouche pendant les réponses et la phrase d'accueil.
 
 ### Etapes de l'interaction
-## expression visage |
 
-| Etape      | Audio                                                               | servomoteurs |
-|------------|---------------------------------------------------------------------|--------------|
-| Démarrage  | Salutation et présentation                                          | Valeurs      |
-| Requête    | L'utilisateur maintient le bouton<br> poussoir et expose sa requête | Info         |
-| Traitement | stt -> Résumé wikipedia -> stt                                      | Info         |
-| Réponse    | 1.                                                                  | Info         |
+|Etape     |Audio                                                                                           | Servomoteurs          |Expression visage |
+|----------|------------------------------------------------------------------------------------------------|----------------------|
+|Démarrage |Salutation et présentation                                                                      |Rotation des deux bras|speaking|
+|Requête   |L'utilisateur maintient le bouton<br> poussoir et expose sa requête                             |/                     |waiting|
+|Traitement|Enregistrement requête -> stt -> Recherche résumé wikipedia -> stt                              |/                     |thinking|
+|Réponse*  |1. Sortie audio du résumé wikipedia<br> 2. Lecture du fichier audio disant qu'il n'a pas compris|2. Rotation de la tête|1. teaching<br> 2. speaking|
+
+* Dans le cas 1. la recherche wikipedia renvoie un résultat. Tandis que dans le cas 2. la recherche ne renvoie rien (cela peut être dû au fait qu'aucune requête n'a été donnée par l'utilisateur, ou que la recherche n'a pas aboutie car le mot a mal été transcrit, qu'il existe plusieurs page associées ...)
 
 1. Démarrage : Le robot salut en levant les bras puis se présente et explique son fonctionnement 
 2. Question : L'utilisateur maintient le bouton poussoir et expose sa requête

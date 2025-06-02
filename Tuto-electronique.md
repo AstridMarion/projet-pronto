@@ -26,10 +26,10 @@ Il a pour objectif d'apporter toutes les clés, étape par étape, de la réalis
     - **Canal 2** : Bras droit
 
 Ci-desous sont illustrés les branchements réalisés:<br>
-<img src="./images/Branchement_Bonton-poussoir.png" width="200" >
 <img src="./images/Branchement_Servomoteurs.png" width="200" >
-<img src="./images/Branchement_Ecran.png" width="200" >
+<img src="./images/Branchement_Bonton-poussoir.png" width="200" >
 <img src="./images/Branchement_Casque.png" width="200" >
+<img src="./images/Branchement_Ecran.png" width="200" >
 
 ## 3. Configuration Raspberry
 

@@ -44,7 +44,7 @@ Tandis que dans le **cas 2.** la recherche ne renvoie rien (cela peut être dû 
 - **résistance** (1 kΩ) 
 - **Module de commande ADA815** [https://cdn-shop.adafruit.com/datasheets/PCA9685.pdf] nécessaire pour contrôler 3 servomoteurs car la raspberry n'en supporte pas autant
 - **3 servomoteurs continues**
-- **Ecran** [https://cdn.robotshop.com/media/a/adu/rb-adu-41/pdf/uctronics-35-tft-lcd-touch-screen-pen-raspberry-pi-datasheet.pdf] LCD UCTRONICS B0106
+- **Ecran** LCD UCTRONICS B0106 [https://cdn.robotshop.com/media/a/adu/rb-adu-41/pdf/uctronics-35-tft-lcd-touch-screen-pen-raspberry-pi-datasheet.pdf]
 - **Câbles**: alimentation raspberry avec boîtier (3A, 5.1V) / hub USB (2 ports) / câbles Dupont (x8) / HDMI-HDMI mini (pour l'écran) / USB-micro_USB (alim écran) / alim module servo / adaptateur USB-secteur 
 
 ## 2. Configuration Matériel et branchements

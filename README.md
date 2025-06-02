@@ -32,37 +32,8 @@ Mode **speaking** : Animation bouche pendant les réponses et la phrase d'accuei
 |Traitement|Enregistrement requête -> stt -> Recherche résumé wikipedia -> stt                              |/                     |thinking|
 |Réponse*  |1. Sortie audio du résumé wikipedia<br> 2. Lecture du fichier audio disant qu'il n'a pas compris|2. Rotation de la tête|1. teaching<br> 2. speaking|
 
-\* Dans le cas 1. la recherche wikipedia renvoie un résultat. Tandis que dans le cas 2. la recherche ne renvoie rien (cela peut être dû au fait qu'aucune requête n'a été donnée par l'utilisateur, ou que la recherche n'a pas aboutie car le mot a mal été transcrit, qu'il existe plusieurs page associées ...)
-
-1. Démarrage : Le robot salut en levant les bras puis se présente et explique son fonctionnement 
-2. Question : L'utilisateur maintient le bouton poussoir et expose sa requête
-3. Traitement : Le robot réfléchit et recherche la réponse
-4. Réponse : Le robot répond avec gestes et expressions appropriées
-Flux d'Interaction
-Présentation → Écoute → Traitement → Réponse → Écoute...
-
-Changements de mode d'expression selon l'état du système
-Arrêt automatique des threads à la fin de chaque tâche
-Gestion des ressources partagées avec des verrous
-Développement
-Extension des Fonctionnalités
-Nouvelles expressions : Ajoutez des modes dans Screen.py
-Autres sources de données : Modifiez AudioProcessing.py
-Nouveaux gestes : Étendez Servo.py avec de nouveaux mouvements
-Langues supplémentaires : Changez les modèles Vosk et Piper
-Debugging
-Logs détaillés dans chaque classe
-Gestion d'exceptions dans tous les threads
-Mode verbose pour le développement
-Configuration
-Personnalisation Audio
-Langue : Modifiez wikipedia.set_lang() dans AudioProcessing.py
-Modèles : Changez les chemins dans les variables de configuration
-Qualité audio : Ajustez SAMPLE_RATE et les paramètres d'enregistrement
-Personnalisation Visuelle
-Taille d'écran : Le système s'adapte automatiquement (fullscreen)
-Couleurs et formes : Modifiez les constantes dans Screen.py
-Animations : Ajustez les paramètres d'animation
+\* Dans le **cas 1.** la recherche wikipedia renvoie un résultat. 
+Tandis que dans le **cas 2.** la recherche ne renvoie rien (cela peut être dû au fait qu'aucune requête n'a été donnée par l'utilisateur, ou que la recherche n'a pas aboutie car le mot a mal été transcrit, qu'il existe plusieurs page associées ...)
 
 ## 3. Architecture Technique
 ### Composants électroniques 

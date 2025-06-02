@@ -28,7 +28,7 @@ Tout cela en un temps limité de **5 mois**, de janvier 2025 à mi mai 2025.
 * Invention de l'intégralité des étapes de l'interaction, en prenant en compte tous les cas de figure possible dont les potentiels disfonctionnement des librairies utilisées
 * Communication des avancés au sein de l'équipe et avec nos encadrants
 
-## Auteurs
+## Qui sommes-nous ?
 
 Nous sommes une équipe de 4 étudiants de l'IMT Atlantique composée de:<br>
 <br>

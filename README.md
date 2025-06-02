@@ -24,8 +24,55 @@ Mode **teaching** : Lunettes et animation bouche pour les réponses
 Mode **speaking** : Animation bouche pendant les réponses et la phrase d'accueil.
 
 ## Architecture Technique
+### Composants électroniques 
 
-### Structure de l'environnement
+- **Raspberry Pi 4 model b** avec GPIO pour l'interface matérielle
+- **Casque USB** (/!\ la prise jack de la raspberry ne fournie pas d'entrée audio, donc il est nécessaire )
+- **bouton poussoir**
+- **résistance** (1 kΩ) 
+- **Module de commande ADA815**
+- **3 servomoteurs continues**
+- **Ecran** LCD UCTRONICS B0106
+- **Câbles**: alimentation raspberry avec boîtier (3A, 5.1V) / hub USB (2 ports) / câbles Dupont (x8) / HDMI-HDMI mini (pour l'écran) / USB-micro_USB (alim écran) / alim module servo / adaptateur USB-secteur 
+
+### Configuration Matérielle
+
+- **GPIO 4** : Bouton poussoir (pull-up interne)
+- **GPIO 17** : Pin OE pour contrôle des servomoteurs
+- **USB Port 1** : Microphone
+- Servomoteurs sur le module:
+    - **Canal 0** : Bras gauche
+    - **Canal 1** : Tête
+    - **Canal 2** : Bras droit
+
+### Configuration 
+
+- Installation de l'OS de la raspberry via Raspberry Pi Imager:
+    - Système d'exploitation:  **Raspberry Pi OS (64-bit) (En ligne)**
+    - Nom d’hôte: **rpi.local**
+    - Nom utilisateur: **grp10**
+
+- Activer l'I2C pour l'écran et le module de contrôle des servomoteurs: 
+```bash
+sudo raspi-config
+> "Interfacing Options" 
+> "I2C"
+> Enable 
+```
+Pour vérifier les adresses I2C:
+```bash
+i2cdetect -y 1
+```
+
+- Choisir le bon port audio:
+```bash
+sudo raspi-config 
+> systeme option 
+> audio 
+> choose USB
+```
+
+### Structure de l'environnement Raspberry
 ```bash
 grp10/                                      # Dossier utilisateur
 ├── setup_autostart.sh                      # Fichier de démarrage automatique après allumage
@@ -52,33 +99,6 @@ grp10/                                      # Dossier utilisateur
         │   └── fr_FR-siwis-medium.onnx.json
 ```
 
-### Composants électroniques 
-- **Raspberry Pi 4 model b** avec GPIO pour l'interface matérielle
-- **Casque USB**
-- **bouton poussoir**
-- **résistance** (1 kΩ) 
-- **Module de commande ADA815**
-- **3 servomoteurs continues**
-- **Ecran** LCD UCTRONICS B0106
-- **Câbles**: alimentation raspberry avec boîtier (3A, 5.1V) / hub USB (2 ports) / câbles Dupont (x8) / HDMI-HDMI mini (pour l'écran) / USB-micro_USB (alim écran) / alim module servo / adaptateur USB-secteur 
-
-### Configuration 
-- installation de l'OS
-- Activer l'I2C pour l'écran et le module de contrôle des servomoteurs: 
-```bash
-sudo raspi-config
-> "Interfacing Options" 
-> "I2C"
-> Enable 
-```
-Pour vérifier les adresses I2C:
-```bash
-i2cdetect -y 1
-```
-
-- Audio:
-    sudo raspi-config > systeme option > audio > choose USB
-
 ### Librairies et modèles
 
 - Audio
@@ -87,6 +107,8 @@ i2cdetect -y 1
     ```bash
     sudo apt install portaudio19-dev libasound2-dev 
     ```
+
+    - **pygame** (python): lire des fichiers .wav
 
     - **wikipedia** (python): rechercher des pages wikipedia et récupérer des résumés
 
@@ -110,16 +132,23 @@ i2cdetect -y 1
 
 - Autres
     - **RPI.GPIO** (python): gérer les GPIO de la raspberry
+    - **threading** (python): interfaces haut-niveau de fils d'exécutions multiples. Le fichier Main.py gère 4 types de fils d'exécution différents pour: le traitement de l'audio, la lecture de fichiers audios, les servomoteurs et l'écran. 
+
+### Démarrage automatique
+
+Pour que le fichier Main.py s'exécute automatiquement à l'allumage du robot, le fichier bash setup_autostart.sh est nécessaire. De plus, pour éviter que les servomoteurs ne tournent pendant le démarrage du robot, le fichier **setup_autostart.sh** créer le fichier **/home/grp10/p10/projet-pronto/servo/servo_preinit.sh** pour éviter ce disfonctionnement.
+
+1. Déplacer le fichier setup_autostart.sh vers le chemin **/home/grp10/setup_autostart.sh**
+2. Rendre le fichier exécutable:
+```bash
+chmod +x setup_autostart.sh
+```
+3. Exécuter le fichier avec les privilège administrateur: 
+```bash
+sudo bash setup_autostart.sh
+```
 
 
-Configuration Matérielle
-GPIO 4 : Bouton poussoir (pull-up interne)
-GPIO 17 : Pin OE pour contrôle des servomoteurs
-USB Port 1 : Microphone
-Servomoteurs :
-Canal 0 : Bras gauche
-Canal 1 : Tête
-Canal 2 : Bras droit
 Utilisation
 Démarrage
 bash

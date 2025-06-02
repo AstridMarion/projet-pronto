@@ -12,6 +12,30 @@ ssh grp10@rpi.local
 ```
 Puis afin de partager nos avancées respectives sur l’implémentation du code, nous utilisons un dépôt git.
 
+
+## Présentation de l'interaction
+
+**Expressions faciales** : Affiche différentes expressions sur écran selon le contexte:<br>
+- Mode **waiting** : Visage souriant, sans mouvement lorsque le robot attend la requête de l'utilisateur
+- Mode **thinking** : Sourire avec engrenages, sans mouvement lorsque le robot chreche la réponse
+- Mode **teaching** : Lunettes avec une animation de la bouche pour donner les réponses lorsqu'elles sont trouvées
+- Mode **speaking** : Animation de la bouche lorsque le robot n'a pas trouvé la réponse et lors de la phrase d'accueil
+
+<div align="center">
+<img src="../images/Expressions.png" >
+</div>
+
+|Etape     |Audio                                                                                          |Servomoteurs          | Expression visage |
+|-----------|------------------------------------------------------------------------------------------------|-----------------------|---|
+|Démarrage|Salutation et présentation                                                                     |Rotation des deux bras |speaking|
+|Requête   |L'utilisateur maintient le bouton<br> poussoir et expose sa requête                             |/                     |waiting|
+|Traitement|Enregistrement requête -> stt -> Recherche résumé wikipedia -> stt                              |/                     |thinking|
+|Réponse*  |1. Sortie audio du résumé wikipedia<br> 2. Lecture du fichier audio disant qu'il n'a pas compris|2. Rotation de la tête|1. teaching<br> 2. speaking|
+
+\* Dans le **cas 1.** la recherche wikipedia renvoie un résultat. <br>
+Tandis que dans le **cas 2.** la recherche ne renvoie rien (cela peut être dû au fait qu'aucune requête n'a été donnée par l'utilisateur, que la connection wifi a sauté ou que la recherche n'a pas aboutie car le mot a mal été transcrit, qu'il existe plusieurs page associées ...)
+
+
 ## 1. Composants électroniques utilisés
 
 - **Raspberry Pi 4 model b** avec GPIO pour l'interface matérielle

@@ -45,7 +45,7 @@ Mode **speaking** : Animation bouche pendant les réponses et la phrase d'accuei
     - **Canal 1** : Tête
     - **Canal 2** : Bras droit
 
-### Configuration 
+### Configuration Raspberry
 
 - Installation de l'OS de la raspberry via Raspberry Pi Imager:
     - Système d'exploitation:  **Raspberry Pi OS (64-bit) (En ligne)**
@@ -148,31 +148,14 @@ chmod +x setup_autostart.sh
 sudo bash setup_autostart.sh
 ```
 
-
-Utilisation
-Démarrage
-bash
-# Initialisation des servomoteurs (optionnel)
-sudo bash servo/servo_preinit.sh
-
-# Lancement du robot
-python3 Main.py
-Interaction
+# Interaction
 Démarrage : Le robot se présente et explique son fonctionnement
 Question : Maintenez le bouton poussoir et posez votre question
 Traitement : Le robot réfléchit et recherche la réponse
 Réponse : Le robot répond avec gestes et expressions appropriées
 Flux d'Interaction
 Présentation → Écoute → Traitement → Réponse → Écoute...
-Architecture Logicielle
-Threading
-Le système utilise plusieurs threads parallèles :
 
-Screen Thread : Affichage continu des expressions faciales
-Audio Thread : Acquisition, traitement et synthèse audio
-Servo Threads : Contrôle indépendant de chaque servomoteur
-Speak Threads : Lecture des fichiers audio
-Synchronisation
 Changements de mode d'expression selon l'état du système
 Arrêt automatique des threads à la fin de chaque tâche
 Gestion des ressources partagées avec des verrous
@@ -195,28 +178,15 @@ Personnalisation Visuelle
 Taille d'écran : Le système s'adapte automatiquement (fullscreen)
 Couleurs et formes : Modifiez les constantes dans Screen.py
 Animations : Ajustez les paramètres d'animation
-Dépannage
-Problèmes Fréquents
-Pas de son : Vérifiez la configuration audio de pygame
-Servomoteurs inertes : Contrôlez le GPIO 17 et l'alimentation
-Reconnaissance vocale défaillante : Vérifiez le microphone et le modèle Vosk
-Écran noir : Vérifiez pygame et l'affichage fullscreen
-Logs et Debug
-Les erreurs sont affichées dans la console avec identification du thread concerné.
 
-Licence
-Ce projet est développé dans un cadre éducatif. Consultez les licences des bibliothèques tierces utilisées.
+# Points d'amélioration possibles
+- Changer le casque audio pour de vrais micro et haut-parleur.
+- Faire en sorte que wikipedia ne renvoie pas de phonétique dans le résumé de la page, car piper ne parvient pas à le lire avec son modèle de voix.
+- Redimmensionner les pièces 3D, car certaines pièces ne laissent pas assez de marge, ce qui nous a contraint à limer une partie des pièces.
 
-Contribution
-Pour contribuer au projet :
-
-Forkez le repository
-Créez une branche pour votre fonctionnalité
-Testez vos modifications sur hardware
-Soumettez une merge request avec description détaillée
-Auteurs
-Développé par l'équipe Groupe Pronto - IMT Atlantique
-
-Robot Compagnon - Une interface naturelle et interactive pour l'apprentissage et la découverte
-
-# projet-pronto
+# Auteurs
+Développé par 4 étudiants dans le cadre du projet Pronto à IMT Atlantique:
+Astrid MARION
+Louis BONDUELLE
+Coline FELTIN
+Florian THOLLOT

@@ -1,6 +1,6 @@
 # WIKIBOT - projet PRONTO (projet de l'ingénieur dans un monde en transition)
 
-> ℹ️ **Note**
+> [!NOTE]
 > 
 > Un projet dans le cadre de notre première année en école d'ingénieur à IMT Atlantique visant la conception et fabrication complète d'un robot compagnon que nous avons prénommé WIKIBOT.
 

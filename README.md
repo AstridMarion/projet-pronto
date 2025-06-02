@@ -1,12 +1,7 @@
-## 2. Points d'amélioration possibles
-- Changer le casque audio pour de vrais micro et haut-parleur.
-- Faire en sorte que wikipedia ne renvoie pas de phonétique dans le résumé de la page, car piper ne parvient pas à le lire avec son modèle de voix.
-- Ajouter un régulateur de tension pour éviter d'avoir 2 alimentations à brancher.
-- Redimmensionner les pièces 3D, car certaines pièces ne laissent pas assez de marge, ce qui nous a contraint à limer une partie des pièces.
-
-
 # WIKIBOT - projet PRONTO (projet de l'ingénieur dans un monde en transition)
 Wikibot est un robot interactif capable de répondre aux questions vocales en utilisant Wikipedia, avec expressions faciales et mouvements corporels.
+
+<img src="./images/Equipe.png">
 
 ## 1. Description
 Ce robot compagnon est conçu pour interagir naturellement avec les utilisateurs à travers :
@@ -19,7 +14,7 @@ Ce robot compagnon est conçu pour interagir naturellement avec les utilisateurs
 - Mode **thinking** : Sourire avec engrenages, sans mouvement lorsque le robot chreche la réponse
 - Mode **teaching** : Lunettes avec une animation de la bouche pour donner les réponses lorsqu'elles sont trouvées
 - Mode **speaking** : Animation de la bouche lorsque le robot n'a pas trouvé la réponse et lors de la phrase d'accueil
-<img src="./images/Expressions.png" width="500" >
+<img src="./images/Expressions.png" width="700" >
 
 * **Mouvements** : Gesticule avec les bras et la tête pendant les interactions
 

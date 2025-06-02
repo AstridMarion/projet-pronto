@@ -76,6 +76,9 @@ class Servo(threading.Thread):
             time.sleep(0.6)
             self.kit.continuous_servo[servoPin].throttle = -0.4
             time.sleep(0.5)
+
+            #stop right arm servo
+            self.kit.continuous_servo[servoPin].throttle = 0
            
             GPIO.output(self.OE_PIN, GPIO.HIGH)
             
@@ -89,6 +92,9 @@ class Servo(threading.Thread):
             self.kit.continuous_servo[servoPin].throttle = 0.4
             time.sleep(0.5)
 
+            #stop right arm servo
+            self.kit.continuous_servo[servoPin].throttle = 0
+
             GPIO.output(self.OE_PIN, GPIO.HIGH)
         
         elif self.servoName == "head":
@@ -97,13 +103,15 @@ class Servo(threading.Thread):
             self.kit.continuous_servo[0].throttle = 0
             self.kit.continuous_servo[2].throttle = 0
 
-            self.kit.continuous_servo[1].throttle = -0.2
+            self.kit.continuous_servo[servoPin].throttle = -0.2
             time.sleep(0.2)
-            self.kit.continuous_servo[1].throttle = 0.2
+            self.kit.continuous_servo[servoPin].throttle = 0.2
             time.sleep(0.4)
-            self.kit.continuous_servo[1].throttle = -0.2
+            self.kit.continuous_servo[servoPin].throttle = -0.2
             time.sleep(0.2)
 
+            #stop head servo
+            self.kit.continuous_servo[servoPin].throttle = 0
             GPIO.output(self.OE_PIN, GPIO.HIGH)
 
         else:

@@ -25,9 +25,9 @@ Mode **speaking** : Animation bouche pendant les réponses et la phrase d'accuei
 
 ### Etapes de l'interaction
 
-|Etape     |Audio                                                                                           | Servomoteurs          |Expression visage |
-|----------|------------------------------------------------------------------------------------------------|----------------------|
-|Démarrage |Salutation et présentation                                                                      |Rotation des deux bras|speaking|
+|Etape     |Audio                                                                                          |Servomoteurs          | Expression visage |
+|-----------|------------------------------------------------------------------------------------------------|-----------------------|---|
+|Démarrage|Salutation et présentation                                                                     |Rotation des deux bras |speaking|
 |Requête   |L'utilisateur maintient le bouton<br> poussoir et expose sa requête                             |/                     |waiting|
 |Traitement|Enregistrement requête -> stt -> Recherche résumé wikipedia -> stt                              |/                     |thinking|
 |Réponse*  |1. Sortie audio du résumé wikipedia<br> 2. Lecture du fichier audio disant qu'il n'a pas compris|2. Rotation de la tête|1. teaching<br> 2. speaking|

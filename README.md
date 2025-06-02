@@ -1,7 +1,9 @@
 # WIKIBOT - projet PRONTO (projet de l'ingénieur dans un monde en transition)
 Wikibot est un robot interactif capable de répondre aux questions vocales en utilisant Wikipedia, avec expressions faciales et mouvements corporels.
 
-<img src="./images/Equipe.jpg">
+<div align="center">
+<img src="./images/Equipe.jpg" width=500>
+</div>
 
 ## 1. Description
 Ce robot compagnon est conçu pour interagir naturellement avec les utilisateurs à travers :

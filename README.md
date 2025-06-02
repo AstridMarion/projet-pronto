@@ -24,13 +24,14 @@ Mode **teaching** : Lunettes et animation bouche pour les réponses
 Mode **speaking** : Animation bouche pendant les réponses et la phrase d'accueil.
 
 ### Etapes de l'interaction
+## expression visage |
 
-| Etape      | Audio                                                           | servomoteurs | expression visage |
-|------------|-----------------------------------------------------------------|-----------|
-| Démarrage  | Salutation et présentation                                      | Valeurs   |
-| Requête    | L'utilisateur maintient le bouton<br> poussoir et expose sa requête | Info      |
-| Traitement | stt -> Résumé wikipedia -> stt                                  | Info      |
-| Réponse    | 1.       | Info      |
+| Etape      | Audio                                                               | servomoteurs |
+|------------|---------------------------------------------------------------------|--------------|
+| Démarrage  | Salutation et présentation                                          | Valeurs      |
+| Requête    | L'utilisateur maintient le bouton<br> poussoir et expose sa requête | Info         |
+| Traitement | stt -> Résumé wikipedia -> stt                                      | Info         |
+| Réponse    | 1.                                                                  | Info         |
 
 1. Démarrage : Le robot salut en levant les bras puis se présente et explique son fonctionnement 
 2. Question : L'utilisateur maintient le bouton poussoir et expose sa requête

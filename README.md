@@ -10,15 +10,7 @@ WIKIBOT est un robot interactif capable de répondre à une requête vocale en u
 <img src="./images/Equipe.jpg" >
 </div>
 
-
-<video width="100%" controls>
-  <source src="./images/presentation.webm" type="video/webm">
-  <source src="./images/presentation.mp4" type="video/mp4">
-  <p>
-    Votre navigateur ne supporte pas les vidéos HTML5. 
-    <a href="./images/presentation.mp4">Télécharger la vidéo</a>.
-  </p>
-</video>
+La vidéo de présentation du robot est disponible au téléchargement dans le dossier ./images, et vous la retrouverez également sur youtube: https://youtu.be/LJfq5HjDZg8 .
 
 ## Objectifs
 

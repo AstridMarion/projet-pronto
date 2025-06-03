@@ -10,8 +10,6 @@ WIKIBOT est un robot interactif capable de répondre à une requête vocale en u
 <img src="../images/Equipe.jpg" >
 </div>
 
-<video src="./images/presentation.mp4" controls width="600"></video>
-
 ## Objectifs
 
 > Modélisation et impression 3D de l'intégralité du corps du robot<br>

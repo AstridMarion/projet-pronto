@@ -3,6 +3,10 @@
 Ce document est une description complète et détaillée des parties codage et électronique du système. <br>
 Il a pour objectif d'apporter toutes les clés, étape par étape, de la réalisation du dispositif pour de futurs curieux ou passionnés.
 
+## Sommaire
+
+[TOC]
+
 ## Organisation de travail choisie
 
 Afin de faciliter l’utilisation de la raspberry, nous avons choisi d’y connecter directement nos ordinateurs personnels via SSH grâce au partage de connexion de nos téléphones. <br>
@@ -192,7 +196,4 @@ Voici quelques piste d'améliorations possibles du robot:
 - Changer le casque audio pour de vrais micro et haut-parleur.
 - Faire en sorte que wikipedia ne renvoie pas de phonétique dans le résumé de la page, car piper ne parvient pas à le lire avec son modèle de voix.
 - Ajouter un régulateur de tension pour centraliser les 3 alimentations.
-
-## Bibliographie
-
 

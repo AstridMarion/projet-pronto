@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# /!\ Déplacer ce fichier vers le chemin "/home/grp10/setup_autostart.sh" /!\
+
 # Script de configuration pour le démarrage automatique du robot P10 (version améliorée)
 # À exécuter avec les privilèges sudo
 

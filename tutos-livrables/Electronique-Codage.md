@@ -5,7 +5,18 @@ Il a pour objectif d'apporter toutes les clés, étape par étape, de la réalis
 
 ## Sommaire
 
-[[TOC]]
+- [Organisation de travail choisie](#Organisation-de-travail-choisie)
+- [Présentation de l'interaction](#Présentation-de-linteraction)
+- [1. Composants électroniques utilisés](#1-Composants-électroniques-utilisés)
+- [2. Configuration Matériel et branchements](#2-Configuration-Matériel-et-branchements)
+- [3. Configuration Raspberry](#3-Configuration-Raspberry)
+- [4. Structure du code et de l'environnement Raspberry](#4-Structure-du-code-et-de-lenvironnement-Raspberry)
+- [5. Librairies et modèles](#5-Librairies-et-modèles)
+- [6. Démarrage automatique](#6-Démarrage-automatique)
+- [Conclusion](#Conclusion)
+    - [- Difficultés rencontrées dans cette partie](#--Difficultés-rencontrées-dans-cette-partie)
+    - [- Perspective d'amélioration](#--Perspective-damélioration)
+
 
 ## Organisation de travail choisie
 
@@ -19,7 +30,7 @@ Puis afin de partager nos avancées respectives sur l’implémentation du code,
 
 ## Présentation de l'interaction
 
-**Expressions faciales** : Affiche différentes expressions sur écran selon le contexte:<br>
+**Expressions faciales** : L'écran du robot est capable d'afficher différentes expressions de visage selon le contexte:<br>
 - Mode **waiting** : Visage souriant, sans mouvement lorsque le robot attend la requête de l'utilisateur
 - Mode **thinking** : Sourire avec engrenages, sans mouvement lorsque le robot chreche la réponse
 - Mode **teaching** : Lunettes avec une animation de la bouche pour donner les réponses lorsqu'elles sont trouvées

@@ -5,7 +5,7 @@ Il a pour objectif d'apporter toutes les clés, étape par étape, de la réalis
 
 ## Sommaire
 
-[TOC]
+[[TOC]]
 
 ## Organisation de travail choisie
 

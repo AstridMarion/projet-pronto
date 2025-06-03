@@ -7,7 +7,7 @@
 WIKIBOT est un robot interactif capable de répondre à une requête vocale en utilisant Wikipedia, avec expressions faciales et mouvements corporels.
 
 <div align="center">
-<img src="./images/Equipe.jpg" width=500>
+<img src="./images/presentation.mp4" width=500>
 </div>
 
 ## Objectifs

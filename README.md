@@ -1,4 +1,11 @@
 # WIKIBOT - projet PRONTO (projet de l'ingénieur dans un monde en transition)
+[![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)](https://www.linux.org/)
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-A22846?logo=raspberrypi&logoColor=white)](https://www.raspberrypi.org/)
+[![API](https://img.shields.io/badge/API-FastAPI-05998B?logo=fastapi&logoColor=white)](https://en.wikipedia.org/wiki/API)
+[![3D Modeling](https://img.shields.io/badge/3D_Modeling-4B8BBE?logo=opencascade&logoColor=white)](https://en.wikipedia.org/wiki/3D_modeling)
+[![Manager](https://img.shields.io/badge/uv-managed-purple)](https://github.com/astral-sh/uv)
+
 
 > [!NOTE]
 > 

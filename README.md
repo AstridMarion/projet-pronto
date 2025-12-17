@@ -34,7 +34,7 @@ Tout cela en un temps limité de **5 mois**, de janvier 2025 à mi mai 2025.
 
 Nous sommes une équipe de 4 étudiants de l'IMT Atlantique composée de:<br>
 <br>
-Louis BONDUELLE<br>
-Coline FELTIN<br>
-Florian THOLLOT<br>
-et Astrid MARION<br>
+Coline FELTIN (responsable modélisation et impression 3D)<br>
+Florian THOLLOT (responsable modélisation et impression 3D)<br>
+Louis BONDUELLE (responsable code et électronique)<br>
+et Astrid MARION (responsable code et électronique)<br>
